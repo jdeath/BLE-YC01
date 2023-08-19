@@ -44,14 +44,14 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         name="Electrical Conductivity",
         native_unit_of_measurement=CONDUCTIVITY,
         state_class=SensorStateClass.MEASUREMENT,
-        icon="mdi:radioactive",
+        icon="mdi:flash-triangle-outline",
     ),
     "salt": SensorEntityDescription(
         key="salt",
         name="Salt",
         native_unit_of_measurement=CONCENTRATION_PARTS_PER_MILLION,
         state_class=SensorStateClass.MEASUREMENT,
-        icon="mdi:radioactive",
+        icon="mdi:shaker-outline",
     ),
     "ORP": SensorEntityDescription(
         key="ORP",
@@ -59,21 +59,21 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         native_unit_of_measurement=UnitOfElectricPotential.VOLT,
         state_class=SensorStateClass.MEASUREMENT,
         device_class=SensorDeviceClass.VOLTAGE,
-        icon="mdi:radioactive",
+        icon="mdi:alpha-v-circle",
     ),
     "TDS": SensorEntityDescription(
         key="TDS",
         name="Total Dissolved Solids",
         native_unit_of_measurement=CONCENTRATION_PARTS_PER_MILLION,
         state_class=SensorStateClass.MEASUREMENT,
-        icon="mdi:radioactive",
+        icon="mdi:dots-grid",
     ),
     "pH": SensorEntityDescription(
         key="pH",
         name="pH",
         device_class=SensorDeviceClass.PH,
         state_class=SensorStateClass.MEASUREMENT,
-        icon="mdi:radioactive",
+        icon="mdi:ph",
     ),
     "battery": SensorEntityDescription(
         key="battery",
@@ -81,14 +81,14 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         state_class=SensorStateClass.MEASUREMENT,
         device_class=SensorDeviceClass.BATTERY,
         native_unit_of_measurement=PERCENTAGE,
-        icon="mdi:radioactive",
+        icon="mdi:battery",
     ),
     "cloro": SensorEntityDescription(
         key="cloro",
         name="Free Chlorine",
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement=CONCENTRATION_PARTS_PER_MILLION,
-        icon="mdi:radioactive",
+        icon="mdi:chemical-weapon",
     ),
     "temperature": SensorEntityDescription(
         key="temperature",
@@ -96,7 +96,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         state_class=SensorStateClass.MEASUREMENT,
         device_class=SensorDeviceClass.TEMPERATURE,
         native_unit_of_measurement=UnitOfTemperature.CELSIUS,
-        icon="mdi:radioactive",
+        icon="mdi:pool-thermometer",
     ),
 }
 
