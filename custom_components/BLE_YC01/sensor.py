@@ -58,6 +58,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         name="Oxidation-reduction potential",
         native_unit_of_measurement=UnitOfElectricPotential.VOLT,
         state_class=SensorStateClass.MEASUREMENT,
+        device_class=SensorDeviceClass.VOLTAGE,
         icon="mdi:radioactive",
     ),
     "TDS": SensorEntityDescription(
@@ -70,6 +71,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
     "pH": SensorEntityDescription(
         key="pH",
         name="pH",
+        device_class=SensorDeviceClass.PH,
         state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:radioactive",
     ),
@@ -77,6 +79,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         key="battery",
         name="Battery",
         state_class=SensorStateClass.MEASUREMENT,
+        device_class=SensorDeviceClass.BATTERY,
         native_unit_of_measurement=PERCENTAGE,
         icon="mdi:radioactive",
     ),
@@ -91,6 +94,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         key="temperature",
         name="Temperature",
         state_class=SensorStateClass.MEASUREMENT,
+        device_class=SensorDeviceClass.TEMPERATURE,
         native_unit_of_measurement=UnitOfTemperature.CELSIUS,
         icon="mdi:radioactive",
     ),
