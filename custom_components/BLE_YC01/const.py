@@ -1,0 +1,8 @@
+"""Constants for RD200 BLE."""
+
+DOMAIN = "ble_yc01"
+
+VOLUME_BECQUEREL = "Bq/m³"
+VOLUME_PICOCURIE = "pCi/L"
+
+DEFAULT_SCAN_INTERVAL = 1800
