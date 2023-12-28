@@ -1,5 +1,5 @@
 {
-  "name": "BLE-YC01",
+  "name": "ble-yc01",
   "render_readme": true,
   "homeassistant": "2021.3.1"
 }
