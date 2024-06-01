@@ -17,9 +17,8 @@ from bleak import BleakClient, BleakError
 from bleak.backends.device import BLEDevice
 from bleak_retry_connector import establish_connection
 
-from .const import (
-    BQ_TO_PCI_MULTIPLIER,
-)
+#from .const import (
+#)
 
 READ_UUID = "0000ff02-0000-1000-8000-00805f9b34fb"
 
