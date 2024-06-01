@@ -34,7 +34,7 @@ from homeassistant.helpers.update_coordinator import (
 )
 from homeassistant.util.unit_system import METRIC_SYSTEM
 
-from .const import DOMAIN, VOLUME_BECQUEREL, VOLUME_PICOCURIE
+from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
