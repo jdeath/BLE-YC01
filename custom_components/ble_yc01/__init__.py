@@ -1,4 +1,4 @@
-"""The OPAL BLE integration."""
+"""The YC01 BLE integration."""
 from __future__ import annotations
 
 from datetime import timedelta
@@ -22,7 +22,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Set up OPAL BLE device from a config entry."""
+    """Set up YC01 BLE device from a config entry."""
     hass.data.setdefault(DOMAIN, {})
     address = entry.unique_id
 
@@ -33,10 +33,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     ble_device = bluetooth.async_ble_device_from_address(hass, address)
 
     if not ble_device:
-        raise ConfigEntryNotReady(f"Could not find OPAL device with address {address}")
+        raise ConfigEntryNotReady(f"Could not find YC01 device with address {address}")
 
     async def _async_update_method():
-        """Get data from OPAL BLE."""
+        """Get data from YC01 BLE."""
         ble_device = bluetooth.async_ble_device_from_address(hass, address)
         yc01 = YC01BluetoothDeviceData(_LOGGER)
 
