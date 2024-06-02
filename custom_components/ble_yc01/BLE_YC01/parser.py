@@ -117,9 +117,9 @@ class YC01BluetoothDeviceData:
         
         device.sensors["TDS"] = self.decode_position(decodedData,7)
         
-        cloro = self.decode_position(decodedData,11) / 10
-        if cloro == 6553.6: cloro = float("nan")
-        device.sensors["cloro"] = cloro
+        cloro = self.decode_position(decodedData,11)
+        if cloro == 65536: cloro = float("nan")
+        device.sensors["cloro"] = cloro / 10.0
 
         device.sensors["pH"] = self.decode_position(decodedData,3) / 100.0 
 		
