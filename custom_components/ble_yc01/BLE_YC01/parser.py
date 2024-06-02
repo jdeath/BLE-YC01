@@ -18,8 +18,9 @@ from bleak.backends.device import BLEDevice
 from bleak_retry_connector import establish_connection
 
 from .const import (
-    BQ_TO_PCI_MULTIPLIER,
+    BATT_100, BATT_0
 )
+
 
 READ_UUID = "0000ff02-0000-1000-8000-00805f9b34fb"
 
@@ -106,17 +107,25 @@ class YC01BluetoothDeviceData:
 
         backlight_status = (decodedData[17] & 0x0F) >> 3
 
-        device.sensors["battery"] = self.decode_position(decodedData,15) / 31.9
+        battery = round(100 * (self.decode_position(decodedData,15) - BATT_0) / (BATT_100 - BATT_0))
+        battery = min(max(0, battery), 100)
+        device.sensors["battery"] = battery
+
         ec = self.decode_position(decodedData,5)
         device.sensors["EC"] = ec
         device.sensors["salt"] = ec * 0.55
         
         device.sensors["TDS"] = self.decode_position(decodedData,7)
-        device.sensors["cloro"] = self.decode_position(decodedData,11) / 10
         
-        device.sensors["pH"] = self.decode_position(decodedData,3)/100.0 
+        cloro = self.decode_position(decodedData,11)
+        if cloro == 65535: cloro = float("nan")
+        device.sensors["cloro"] = cloro / 10.0
+
+        device.sensors["pH"] = self.decode_position(decodedData,3) / 100.0 
+		
         device.sensors["ORP"] = self.decode_position(decodedData,9) / 1000.0
-        device.sensors["temperature"] = self.decode_position(decodedData,13)/10.0
+		
+        device.sensors["temperature"] = self.decode_position(decodedData,13) / 10.0
         
         #fcAdjust = 0 
         #device.sensors["freeChlorine"] = round( 0.23 * (1 - fcAdjust) * (14 - ph) ** (1/(400 - orp))*(ph - 4.1) ** ( (orp - 516)/145) + 10.0 ** ( (orp + ph * 70 - 1282 ) / 40 ), 1 );  
@@ -144,3 +153,4 @@ class YC01BluetoothDeviceData:
         await client.disconnect()
 
         return device
+																	 

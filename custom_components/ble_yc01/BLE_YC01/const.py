@@ -1,3 +1,4 @@
-"""Constants for RD200 BLE parser"""
+"""Constants for YC01 BLE parser"""
 
-BQ_TO_PCI_MULTIPLIER = 0.027
+BATT_100 = 3190
+BATT_0 = 1950

@@ -13,13 +13,9 @@ from homeassistant.components.sensor import (
     SensorStateClass,
 )
 from homeassistant.const import (
-    CONCENTRATION_PARTS_PER_BILLION,
     CONCENTRATION_PARTS_PER_MILLION,
-    LIGHT_LUX,
     PERCENTAGE,
-    UnitOfPressure,
     UnitOfTemperature,
-    UnitOfTime,
     UnitOfElectricPotential,
     CONDUCTIVITY,
 )
@@ -34,7 +30,7 @@ from homeassistant.helpers.update_coordinator import (
 )
 from homeassistant.util.unit_system import METRIC_SYSTEM
 
-from .const import DOMAIN, VOLUME_BECQUEREL, VOLUME_PICOCURIE
+from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
