@@ -77,7 +77,6 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         state_class=SensorStateClass.MEASUREMENT,
         device_class=SensorDeviceClass.BATTERY,
         native_unit_of_measurement=PERCENTAGE,
-        icon="mdi:battery",
     ),
     "cloro": SensorEntityDescription(
         key="cloro",
