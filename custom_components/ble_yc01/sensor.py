@@ -51,7 +51,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
     ),
     "ORP": SensorEntityDescription(
         key="ORP",
-        name="Oxidation-reduction potential",
+        name="Oxidation-Reduction Potential",
         native_unit_of_measurement=UnitOfElectricPotential.VOLT,
         state_class=SensorStateClass.MEASUREMENT,
         device_class=SensorDeviceClass.VOLTAGE,
@@ -77,7 +77,6 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
         state_class=SensorStateClass.MEASUREMENT,
         device_class=SensorDeviceClass.BATTERY,
         native_unit_of_measurement=PERCENTAGE,
-        icon="mdi:battery",
     ),
     "cloro": SensorEntityDescription(
         key="cloro",
