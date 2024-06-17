@@ -73,11 +73,8 @@ class YC01BluetoothDeviceData:
 
         return frame_array
     
-    def reverse_bytes(self, bytes : list):
-        return (bytes[0] << 8) + bytes[1]
-
     def decode_position(self,decodedData,idx):
-        return self.reverse_bytes(decodedData[idx:idx+2])
+        return int.from_bytes(decodedData[idx:idx+2], byteorder="big", signed=True)
         
     async def _get_status(self, client: BleakClient, device: YC01Device) -> YC01Device:
         
