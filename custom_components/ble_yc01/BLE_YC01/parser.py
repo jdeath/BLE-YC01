@@ -115,7 +115,7 @@ class YC01BluetoothDeviceData:
         device.sensors["TDS"] = self.decode_position(decodedData,7)
         
         cloro = self.decode_position(decodedData,11)
-        if cloro == 65535:
+        if cloro < 0:
           device.sensors["cloro"] = 0
         else:
           device.sensors["cloro"] = cloro / 10.0
