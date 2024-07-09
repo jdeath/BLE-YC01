@@ -5,6 +5,8 @@ Home Assistant BLE Integration for BLE-YC01 Pool Monitor
 
 Please ask support questions in homeassistant forums: https://community.home-assistant.io/t/pool-monitor-device-yieryi-ble-yc01
 
+I no longer have this device (it died!). I will accept PRs but will not actively develop anymore.
+
 I just made a native integration. This supports built-in bluetooth adapters and ESPHome configured as Bluetooth Proxies. Much more effecient than running/decoding directly in ESPHome.
 
 I did not figure out any of the decoding myself. This leverages all the great work by: @anasm2010, 
