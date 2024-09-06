@@ -17,7 +17,7 @@ from homeassistant.const import (
     PERCENTAGE,
     UnitOfTemperature,
     UnitOfElectricPotential,
-    CONDUCTIVITY,
+    UnitOfConductivity,
 )
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH
@@ -38,7 +38,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
     "EC": SensorEntityDescription(
         key="EC",
         name="Electrical Conductivity",
-        native_unit_of_measurement=CONDUCTIVITY,
+        native_unit_of_measurement=UnitOfConductivity.MICROSIEMENS,
         state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:flash-triangle-outline",
     ),
