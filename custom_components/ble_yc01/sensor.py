@@ -38,7 +38,7 @@ SENSORS_MAPPING_TEMPLATE: dict[str, SensorEntityDescription] = {
     "EC": SensorEntityDescription(
         key="EC",
         name="Electrical Conductivity",
-        native_unit_of_measurement=UnitOfConductivity.MICROSIEMENS,
+        native_unit_of_measurement=UnitOfConductivity.MICROSIEMENS_PER_CM,
         state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:flash-triangle-outline",
     ),
